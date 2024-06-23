@@ -13,7 +13,7 @@ func enableCors(w *http.ResponseWriter) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
 
-var _c = *lru.NewLRUCache(5)
+var _c = *lru.NewLRUCache(10)
 
 func GetHandler(w http.ResponseWriter, r *http.Request) {
 	enableCors(&w)
